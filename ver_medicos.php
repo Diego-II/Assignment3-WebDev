@@ -13,23 +13,27 @@ if (isset($_GET["page"])) {
 } else {
     $page=1;
 }
-if($page === 1){
-    $start_from = 1;
+if(isset($_GET["q"]) && $_GET["q"] !== ""){
+    $doc_id = $_GET["q"];
+    $doc_array = getNDocs($db, $doc_id, $doc_id);
+    $n_pages = 1;
+    $page = 1;
 }else{
-    $start_from = 1 + ($page -1) * 5;
+    $doc_id = $_GET["q"];
+    if($page === 1){
+        $start_from = 1;
+    }else{
+        $start_from = 1 + ($page -1) * 5;
+    }
+    if($start_from + 4 >= $ultimo_id){
+        $last_id = $ultimo_id;
+    }else{
+        $last_id = $start_from + 4;
+    }
+    //Cantidad de paginas:
+    $n_pages = ceil(($ultimo_id/5));
+    $doc_array = getNDocs($db, $start_from, $last_id);
 }
-
-if($start_from + 4 >= $ultimo_id){
-    $last_id = $ultimo_id;
-}else{
-    $last_id = $start_from + 4;
-}
-
-//Cantidad de paginas:
-
-$n_pages = ceil(($ultimo_id/5));
-
-$doc_array = getNDocs($db, $start_from, $last_id);
 $db -> close();
 
 ?>
@@ -45,13 +49,6 @@ $db -> close();
         <script src="js/ver_medicos.js"></script>
     </head>
 <body>
-<?php
-for ($i=1; $i<=$n_pages; $i++) {  // print links for all pages
-    echo "<a href='index.php?page=".$i."'";
-    if ($i==$page)  echo " class='curPage'";
-    echo ">".$i."</a> "; 
-}
-?>
     <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-red w3-card w3-left-align w3-large">
@@ -75,6 +72,17 @@ for ($i=1; $i<=$n_pages; $i++) {  // print links for all pages
   <div class="w3-row-padding w3-padding-64 w3-container">
     <div class="w3-content">
         <h1>Ver Medicos</h1>
+        <!-- Buscador de medicos: -->
+        <div class="row">
+        <div class="col-md-3">
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span></span>
+            <input type="text" class="form-control" id="search" placeholder="Buscar Medico">
+        </div>
+        </div>
+        <div class="col-md-3 col-md-offset-3" id="result">
+        </div>
+        </div>
     <table>
         <thead>
             <tr>
@@ -146,5 +154,9 @@ for ($i=1; $i<=$n_pages; $i++) {  // print links for all pages
 </div>
 </div>
 
+</body>
+<script src="./js/jquery.min.js">
+</script>
+<script type="text/javascript" src="js/search_doc.js"></script>
 </body>
 </html>

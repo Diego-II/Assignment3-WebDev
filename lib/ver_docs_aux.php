@@ -105,19 +105,19 @@ function getFotosSlides($k, $alt, $path, $fotos_dir){
 function getPrevPage(){
     if($_GET["page"] - 1 <= 1){
         
-        return "ver_medicos.php?page=1";
+        return "ver_medicos.php?page=1&q=";
     }else{
         $prev = $_GET["page"]-1;
-        return "ver_medicos.php?page=".$prev."";
+        return "ver_medicos.php?page=".$prev."&q=";
     }
 }
 
 function getNextPage($n_pages){
     if($_GET["page"] + 1 >= $n_pages){
-        return "ver_medicos.php?page=".$n_pages."";
+        return "ver_medicos.php?page=".$n_pages."&q=";
     }else{
         $next = $_GET["page"] + 1;
-        return "ver_medicos.php?page=".$next."";
+        return "ver_medicos.php?page=".$next."&q=";
     }
 }
 

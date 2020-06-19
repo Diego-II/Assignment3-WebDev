@@ -73,14 +73,14 @@ $db -> close();
     <div class="w3-content">
         <h1>Ver Medicos</h1>
         <!-- Buscador de medicos: -->
-        <div class="row">
-        <div class="col-md-3">
+        <div class="w3-row">
+        <div class="w3-col m4 l3">
         <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span></span>
-            <input type="text" class="form-control" id="search" placeholder="Buscar Medico">
+            <input type="text" class="form-control" id="search" placeholder="Buscar Medico" onkeyup="search();">
         </div>
         </div>
-        <div class="col-md-3 col-md-offset-3" id="result">
+        <div class="w3-rest" id="result">
         </div>
         </div>
     <table>

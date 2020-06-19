@@ -11,7 +11,7 @@ function search()
     $query = "SELECT id, nombre FROM medico WHERE nombre LIKE '%$search%'";
     $res = $db->query($query);
     while ($row = $res->fetch_array(MYSQLI_ASSOC)) {
-        echo "<p><a href='./ver_medicos.php?q=$row[id]' target='_blank'>$row[nombre]</a></p>";
+        echo "<p><a href='./ver_medicos.php?page=1&q=$row[id]' target='_blank'>$row[nombre]</a></p>";
     }
 }
 

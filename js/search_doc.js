@@ -8,7 +8,7 @@ $(document).ready(function(){
             url: 'lib\\search_doc.php',
             data: {'search': search},
             beforeSend: function(){
-                $('#result').html('<img src="img/pacman.gif">')
+                $('#result').html('<img alt="Pacman" src="../img/pacman.gif">')
             }
         })
             .done(function(resultado){

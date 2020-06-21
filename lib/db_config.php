@@ -1,7 +1,7 @@
 <?php
 class DbConfig{
 	private static $db_name = "cc500217_db"; //Base de datos de la app
-	private static $db_user = "cc500217_u" //Usuario MySQL
+	private static $db_user = "cc500217_u"; //Usuario MySQL
 	private static $db_pass = "entesquela"; //Password
 	private static $db_host = "localhost";//Servidor donde esta alojado, puede ser 'localhost' o una IP (externa o interna).
 	

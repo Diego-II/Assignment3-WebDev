@@ -167,7 +167,7 @@ function insertSol($db, $nombreSol, $comunaSol, $celSol, $mailSol, $twitSol, $si
         echo $value, '<br>';
     }
 
-    echo "<td><button onclick = \"location.href = 'Index.html';\">Volver a pagina inicial</button></td>";
+    echo "<td><button onclick = \"location.href = 'Index.php';\">Volver a pagina inicial</button></td>";
 }
 function test_input($data) {
     $data = trim($data);

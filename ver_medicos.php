@@ -19,7 +19,7 @@ if(isset($_GET["q"]) && $_GET["q"] !== ""){
     $n_pages = 1;
     $page = 1;
 }else{
-    $doc_id = $_GET["q"];
+    //$doc_id = $_GET["q"];
     if($page === 1){
         $start_from = 1;
     }else{
@@ -53,7 +53,7 @@ $db -> close();
 <div class="w3-top">
     <div class="w3-bar w3-red w3-card w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="Index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+      <a href="Index.php" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
       <a href="ver_medicos.php?page=1" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Ver Medicos</a>
       <a href="agregar_medicos.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Agregar Medicos</a>
       <a href="agregar_solicitud.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Agregar Solicitud</a>

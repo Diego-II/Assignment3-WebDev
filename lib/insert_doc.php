@@ -199,7 +199,7 @@ function insertDoc($db, $nombre,$region, $comuna, $cel, $mail, $twit, $exp, $esp
         echo $value, '<br>';
     }
 
-    echo "<td><button onclick=\"location.href='../Index.html';\">Volver a pagina inicial</button></td>";
+    echo ">Volver a pagina inicial</button></td>";
 }
 
 function test_input($data) {

@@ -31,7 +31,9 @@ $array_resultados = getDocsPins();
         <script src="js/map.js"></script>
         <style>
             #mapid {
-                height: 500px;
+                height: 70%;
+                width: 60%;
+                margin: 0 auto;
             }
         </style>
     </head>
@@ -63,7 +65,7 @@ $array_resultados = getDocsPins();
   <p class="w3-xlarge">Registro web de medicos y solicitudes de atencion.</p>
 
         </div>
-        <div id="mapid"></div>
+        <div id="mapid" align="center"></div>
         <script>
         var mymap = L.map('mapid').setView([-33.4372, -70.6506], 5);
         L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZ2l0dXJyYSIsImEiOiJjanVoM3h2dWwwc3VpM3lzMDF2ZmVzb282In0.ZG2nvI23C9yUYuPzosxzFg', {
